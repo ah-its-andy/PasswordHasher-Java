@@ -14,3 +14,9 @@ buildNumber.properties
 \.idea/
 
 *.iml
+
+\.settings/
+
+\.project
+
+security-passwordhasher-core/\.classpath
