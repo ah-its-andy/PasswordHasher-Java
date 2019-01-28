@@ -5,7 +5,6 @@ import io.standardcore.security.random.DefaultSecureRandomGenerator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
@@ -20,12 +19,9 @@ public class RandomGeneratorTests {
         CountDownLatch wg = new CountDownLatch(size);
         for (int i = 0; i < size; i++)
         {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    results.add(new DefaultSecureRandomGenerator().generateBytes(32));
-                    wg.countDown();
-                }
+            new Thread(() -> {
+                results.add(new DefaultSecureRandomGenerator().generateBytes(32));
+                wg.countDown();
             }).start();
         }
         wg.await();
