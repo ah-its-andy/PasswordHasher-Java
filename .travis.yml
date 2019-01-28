@@ -7,10 +7,10 @@ script:
   - sudo apt-get install -y -qq java-common
   - sudo dpkg --install java-1.8.0-amazon-corretto-jdk_8.202.08-2_amd64.deb > /dev/null
   - wget -q http://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz
-  - sudo mkdir /opt/apache-maven-3.6.0
-  - sudo mv apache-maven-3.6.0-bin.tar.gz /opt/apache-maven-3.6.0
-  - sudo tar xzvf apache-maven-3.6.0-bin.tar.gz
-  - export PATH=/opt/apache-maven-3.6.0/bin:$PATH
+  - sudo mkdir ~/apache-maven-3.6.0
+  - sudo mv apache-maven-3.6.0-bin.tar.gz ~/apache-maven-3.6.0
+  - sudo tar xzvf ~/apache-maven-3.6.0-bin.tar.gz
+  - export PATH=~/apache-maven-3.6.0/bin:$PATH
   - cd security-passwordhasher-core
   - mvn clean install
   - mvn test
