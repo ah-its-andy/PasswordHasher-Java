@@ -9,8 +9,7 @@ script:
   - wget -q http://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz
   - sudo mkdir ~/apache-maven-3.6.0
   - sudo mv apache-maven-3.6.0-bin.tar.gz ~/apache-maven-3.6.0/apache-maven-3.6.0-bin.tar.gz
-  - sudo tar xzvf ~/apache-maven-3.6.0/apache-maven-3.6.0-bin.tar.gz
+  - sudo tar xzvf ~/apache-maven-3.6.0/apache-maven-3.6.0-bin.tar.gz > /dev/null
   - export PATH=~/apache-maven-3.6.0/bin:$PATH
   - cd security-passwordhasher-core
-  - mvn clean install
-  - mvn test
+  - mvn clean install > /dev/null
